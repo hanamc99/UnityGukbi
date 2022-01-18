@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CarControl : MonoBehaviour
 {
-    float speed = 0;
+    public float speed = 0;
 
     void Start()
     {
@@ -24,6 +24,7 @@ public class CarControl : MonoBehaviour
             var endPos = Input.mousePosition;
             float swipeLength = endPos.x - this.startPos.x;
             this.speed = swipeLength * Time.deltaTime;
+            this.GetComponent<AudioSource>().Play();
         }
 
         this.transform.Translate(this.speed, 0, 0); //x축으로 이동한다 
