@@ -4,15 +4,28 @@ using UnityEngine;
 
 public class PlayerControl : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private float xRange = 8f;
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        CheckPos();
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            transform.Translate(Vector2.left * 1f);
+        }
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            transform.Translate(Vector2.right * 1f);
+        }
+    }
+    
+    private void CheckPos()
+    {
+        transform.position = new Vector2(Mathf.Clamp(transform.position.x, -xRange, xRange), transform.position.y);
     }
 }
