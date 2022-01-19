@@ -13,7 +13,7 @@ public class PlayerControl : MonoBehaviour
 
     void Start()
     {
-        hp = 1;
+        hp = max_hp;
         GetComponent<SpriteRenderer>().sprite = s[ToGameScene.instance.GetIndex()];
     }
 
