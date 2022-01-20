@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private PlayerControl player;
+    [SerializeField] private UIManager uim;
     [SerializeField] private List<GameObject> objs = new List<GameObject>(4);
     [SerializeField] private Text text;
 
@@ -62,6 +63,7 @@ public class GameManager : MonoBehaviour
     private void PlayerAndTrap()
     {
         player.hp -= 5f;
+        uim.ChangeHp(player.GetPercentageOfHp());
     }
 
     private void PlayerAndGold()

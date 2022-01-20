@@ -15,7 +15,10 @@ public class PlayerControl : MonoBehaviour
         hp = max_hp;
     }
 
-
+    public float GetPercentageOfHp()
+    {
+        return hp / max_hp;
+    }
 
     void Update()
     {
