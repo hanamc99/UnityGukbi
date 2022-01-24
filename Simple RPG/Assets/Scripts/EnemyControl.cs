@@ -34,7 +34,14 @@ public class EnemyControl : MonoBehaviour
         //knight.isAttacking = false;
         //knight.anim.SetBool("IsAttacking", knight.isAttacking);
         anim.SetTrigger("IsDie");
-        knight.anim.ResetTrigger("IsSingleAttack");
+        knight.anim.ResetTrigger("IsSingleAttack");//게임매니저에 대리자로 넣기?
+        StartCoroutine(DestroyAfterLife());
+    }
+
+    IEnumerator DestroyAfterLife()
+    {
+        yield return new WaitForSecondsRealtime(3f);
+        Destroy(gameObject);
     }
 
     void Update()

@@ -299,6 +299,49 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &1840314091
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1840314093}
+  - component: {fileID: 1840314092}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1840314092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1840314091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02e731d81359a00429b2d3bfea10df62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1840314093
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1840314091}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.9704576, y: -15.481632, z: 11.745731}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &503291763836369231
 Transform:
   m_ObjectHideFlags: 0
@@ -1220,6 +1263,7 @@ GameObject:
   - component: {fileID: 3693857682477529199}
   - component: {fileID: 3693857682477529203}
   - component: {fileID: 3693857682477529201}
+  - component: {fileID: 3693857682477529205}
   m_Layer: 0
   m_Name: DogPolyart
   m_TagString: Player
@@ -1239,7 +1283,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c6f06b50099730439b44bad990e79a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isAttacking: 0
   anim: {fileID: 0}
 --- !u!1 &3693857682477529200
 GameObject:
@@ -1318,6 +1361,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &3693857682477529205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3693857682477529198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75f8d3d740616564ea8239711ef22f3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3693857682477529206
 GameObject:
   m_ObjectHideFlags: 0
@@ -2878,8 +2933,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 10, y: 0.30324697, z: 10}
-  m_Center: {x: 0, y: -0.16797984, z: 0}
+  m_Size: {x: 10, y: 0.23956753, z: 10}
+  m_Center: {x: 0, y: -0.19981956, z: 0}
 --- !u!33 &5965831420313898029
 MeshFilter:
   m_ObjectHideFlags: 0

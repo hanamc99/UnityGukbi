@@ -10,6 +10,7 @@ public class KnightControl : MonoBehaviour
     //[HideInInspector] public bool isAttacking = false;
     private float speed = 2f;
     [HideInInspector] public Animator anim;
+    private Coroutine routine;
 
 
     void Start()
@@ -17,35 +18,34 @@ public class KnightControl : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-    void Update()
+    IEnumerator MoveRoutine(Vector3 pos)
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            Debug.DrawRay(ray.origin, ray.direction * 1000f, Color.red, 1.0f);
-            RaycastHit hit;
-            Physics.Raycast(ray, out hit, 1000f);
-            isMoving = true;
-            anim.SetBool("IsMoving", isMoving);
-            dir = hit.point;
-            dir = new Vector3(dir.x, 0f, dir.z);
-            transform.LookAt(dir);
-        }
-        MoveKnight();
-    }
+        isMoving = true;
+        anim.SetBool("IsMoving", isMoving);
+        transform.LookAt(pos);
 
-    void MoveKnight()
-    {
-        if (isMoving)
+        while (true)
         {
             transform.Translate(Vector3.forward * speed * Time.deltaTime);
-            float dis = (transform.position - dir).magnitude;
-            if (dis <= 0.28f)
+
+            if (Vector3.Distance(pos, transform.position) <= 0.3f)
             {
                 isMoving = false;
                 anim.SetBool("IsMoving", isMoving);
+                break;
             }
+
+            yield return null;
         }
+    }
+
+    public void MoveKnight(Vector3 pos)
+    {
+        if(this.routine != null)
+        {
+            StopCoroutine(this.routine);
+        }
+        this.routine = StartCoroutine(MoveRoutine(pos));
     }
 
     private void OnCollisionStay(Collision collision) //Enter
