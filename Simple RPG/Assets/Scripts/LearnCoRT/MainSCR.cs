@@ -8,27 +8,36 @@ public class MainSCR : MonoBehaviour
     private KnightControl knight;
     [SerializeField] private Button btn;
     [SerializeField] private Button moveBtn;
+    [SerializeField] private Button saveBtn;
     private GameObject[] enemies;
     private int killCount = 0;
 
     void Start()
     {
-        Debug.Log(Application.persistentDataPath);
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
         knight = FindObjectOfType<KnightControl>();
         btn.onClick.AddListener(KnightAttack);
         moveBtn.onClick.AddListener(NextEnemy);
+        saveBtn.onClick.AddListener(LetDataSaved);
         knight.delAttack = KnightAttack;
         EnemiesInit();
+    }
+
+    void LetDataSaved()
+    {
+        useJson.instance.SaveData();
     }
 
     void EnemiesInit()
     {
         foreach(GameObject em in enemies)
         {
+            Monster monsterInfo = useJson.instance.gi.monsterInfo;
+            em.GetComponent<EnemyControl>().LoadStatData(monsterInfo.id, monsterInfo.hp);
             em.GetComponent<EnemyControl>().GetKnightDamage(knight.damage);
             em.GetComponent<EnemyControl>().OnDie = NextEnemy;
             em.GetComponent<EnemyControl>().OnDie += () => this.killCount++;
+            em.GetComponent<EnemyControl>().DisplayStat();
         }
     }
 

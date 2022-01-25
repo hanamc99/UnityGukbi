@@ -5,13 +5,19 @@ using UnityEngine;
 public class EnemyControl : MonoBehaviour
 {
     //private KnightControl knight;
-    [SerializeField] private int hp;
     [SerializeField] private int id;
+    [SerializeField] private int hp;
     private Animator anim;
     private Coroutine rtn;
     private int knightDmg;
     private ParticleSystem ps;
     public System.Action OnDie;
+
+    public void LoadStatData(int id, int hp)
+    {
+        this.id = id;
+        this.hp = hp;
+    }
 
     public void DisplayStat()
     {
