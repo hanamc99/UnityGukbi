@@ -4,43 +4,70 @@ using UnityEngine;
 
 public class EnemyControl : MonoBehaviour
 {
-    private KnightControl knight;
-    private int hp;
+    //private KnightControl knight;
+    [SerializeField] private int hp;
+    [SerializeField] private int id;
     private Animator anim;
+    private Coroutine rtn;
+    private int knightDmg;
+    private ParticleSystem ps;
+    public System.Action OnDie;
+
+    public void DisplayStat()
+    {
+        Debug.Log(this.hp + ", " + this.id);
+    }
+
+    public void GetKnightDamage(int d)
+    {
+        this.knightDmg = d;
+    }
 
     void Start()
     {
-        anim = GetComponent<Animator>();
-        hp = 10;
-        knight = FindObjectOfType<KnightControl>();
+        //knight = FindObjectOfType<KnightControl>();
+        ps = GetComponent<ParticleSystem>();
+        anim = GetComponentInChildren<Animator>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("닿음");
         if (other.CompareTag("Sword"))
         {
-            anim.SetTrigger("IsHit");
-            hp -= 2;
+            Debug.Log("닿음");
+            hp -= this.knightDmg;
+            //anim.SetTrigger("IsHit");
             if (hp <= 0)
             {
                 Die();
             }
+            else
+            {
+                Hit();
+            }
         }
+    }
+
+    void Hit()
+    {
+        anim.Play("GetHit", -1, 0);
+        ps.Play();
     }
 
     void Die()
     {
         //knight.isAttacking = false;
         //knight.anim.SetBool("IsAttacking", knight.isAttacking);
-        anim.SetTrigger("IsDie");
-        knight.anim.ResetTrigger("IsSingleAttack");//게임매니저에 대리자로 넣기?
-        StartCoroutine(DestroyAfterLife());
+        //anim.SetTrigger("IsDie");
+        OnDie();
+        anim.Play("Die");
+        ps.Play();
+        this.rtn = StartCoroutine(DestroyAfterLife());
     }
 
     IEnumerator DestroyAfterLife()
     {
-        yield return new WaitForSecondsRealtime(3f);
+        yield return new WaitForSecondsRealtime(2.1f);
         Destroy(gameObject);
     }
 

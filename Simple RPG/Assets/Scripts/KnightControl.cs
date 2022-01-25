@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class KnightControl : MonoBehaviour
 {
-    private Vector3 dir;
+    //[HideInInspector] public bool isAttacking = false;
     private bool isMoving = false;
     private bool isDelay = false;
-    //[HideInInspector] public bool isAttacking = false;
     private float speed = 2f;
+    [HideInInspector] public int damage = 1;
     [HideInInspector] public Animator anim;
     private Coroutine routine;
+    private float attackRange = 1f;
+    public System.Action delAttack;
 
 
     void Start()
@@ -28,7 +30,7 @@ public class KnightControl : MonoBehaviour
         {
             transform.Translate(Vector3.forward * speed * Time.deltaTime);
 
-            if (Vector3.Distance(pos, transform.position) <= 0.3f)
+            if (Vector3.Distance(pos, transform.position) <= attackRange)
             {
                 isMoving = false;
                 anim.SetBool("IsMoving", isMoving);
@@ -57,8 +59,9 @@ public class KnightControl : MonoBehaviour
             if (!isDelay)
             {
                 isDelay = true;
+                delAttack();
                 StartCoroutine(AttackDelay());
-                anim.SetTrigger("IsSingleAttack");
+                //anim.SetTrigger("IsSingleAttack");
                 //isAttacking = true;
                 //anim.SetBool("IsAttacking", isAttacking);
             }

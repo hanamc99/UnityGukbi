@@ -22,6 +22,11 @@ public class GameManager : MonoBehaviour
             Physics.Raycast(ray, out hit, 1000f);
             Vector3 pos = new Vector3(hit.point.x, 0f, hit.point.z);
             knight.MoveKnight(pos);
+            Debug.Log(hit.collider.gameObject.tag);
+            if (hit.collider.CompareTag("Enemy"))
+            {
+                hit.collider.GetComponent<EnemyControl>().DisplayStat();
+            }
         }
     }
 }
