@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KnightControl : MonoBehaviour
+public class PlayerControlNK : MonoBehaviour
 {
-    //[HideInInspector] public bool isAttacking = false;
     private bool isMoving = false;
     private bool isDelay = false;
     private float speed = 2f;
@@ -43,7 +42,7 @@ public class KnightControl : MonoBehaviour
 
     public void MoveKnight(Vector3 pos)
     {
-        if(this.routine != null)
+        if (this.routine != null)
         {
             StopCoroutine(this.routine);
         }
@@ -61,9 +60,6 @@ public class KnightControl : MonoBehaviour
                 isDelay = true;
                 delAttack();
                 StartCoroutine(AttackDelay());
-                //anim.SetTrigger("IsSingleAttack");
-                //isAttacking = true;
-                //anim.SetBool("IsAttacking", isAttacking);
             }
         }
     }

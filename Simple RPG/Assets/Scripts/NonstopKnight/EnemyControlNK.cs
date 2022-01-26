@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyControl : MonoBehaviour
+public class EnemyControlNK : MonoBehaviour
 {
-    //private KnightControl knight;
     [SerializeField] private int id;
     [SerializeField] private int hp;
     private Animator anim;
@@ -68,7 +67,10 @@ public class EnemyControl : MonoBehaviour
         OnDie();
         anim.Play("Die");
         ps.Play();
-        this.rtn = StartCoroutine(DestroyAfterLife());
+        if(rtn == null)
+        {
+            this.rtn = StartCoroutine(DestroyAfterLife());
+        }
     }
 
     IEnumerator DestroyAfterLife()
@@ -79,6 +81,6 @@ public class EnemyControl : MonoBehaviour
 
     void Update()
     {
-        
+
     }
 }
