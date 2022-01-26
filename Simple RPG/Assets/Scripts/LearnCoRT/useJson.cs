@@ -19,7 +19,7 @@ public class useJson : MonoBehaviour
 
     private Dictionary<int, MonsterData> dictMonsterData = new Dictionary<int, MonsterData>();
 
-    void Start()
+    void Awake()
     {
         instance = this;
         //TextAsset data = Resources.Load<TextAsset>("monster_data");
