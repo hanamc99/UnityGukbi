@@ -4,23 +4,17 @@ using UnityEngine;
 
 public class EnemyControlNK : MonoBehaviour
 {
-    [SerializeField] private int id;
-    [SerializeField] private int hp;
+    public int hp;
     private Animator anim;
     private Coroutine rtn;
     private int knightDmg;
     private ParticleSystem ps;
     public System.Action OnDie;
-
-    public void LoadStatData(int id, int hp)
-    {
-        this.id = id;
-        this.hp = hp;
-    }
+    private bool dieOnce = false;
 
     public void DisplayStat()
     {
-        Debug.Log(this.hp + ", " + this.id);
+        Debug.Log(this.hp);
     }
 
     public void GetKnightDamage(int d)
@@ -30,7 +24,6 @@ public class EnemyControlNK : MonoBehaviour
 
     void Start()
     {
-        //knight = FindObjectOfType<KnightControl>();
         ps = GetComponent<ParticleSystem>();
         anim = GetComponentInChildren<Animator>();
     }
@@ -41,12 +34,12 @@ public class EnemyControlNK : MonoBehaviour
         {
             Debug.Log("¥Í¿Ω");
             hp -= this.knightDmg;
-            //anim.SetTrigger("IsHit");
-            if (hp <= 0)
+            if (hp <= 0 && !dieOnce)
             {
+                dieOnce = true;
                 Die();
             }
-            else
+            else if(hp > 0)
             {
                 Hit();
             }
@@ -61,21 +54,20 @@ public class EnemyControlNK : MonoBehaviour
 
     void Die()
     {
-        //knight.isAttacking = false;
-        //knight.anim.SetBool("IsAttacking", knight.isAttacking);
-        //anim.SetTrigger("IsDie");
         OnDie();
+        Debug.Log("¡Í±›");
         anim.Play("Die");
         ps.Play();
-        if(rtn == null)
-        {
-            this.rtn = StartCoroutine(DestroyAfterLife());
-        }
+        StartCoroutine(DestroyAfterLife());
+        //if(rtn == null)
+        //{
+        //    this.rtn = StartCoroutine(DestroyAfterLife());
+        //}
     }
 
     IEnumerator DestroyAfterLife()
     {
-        yield return new WaitForSecondsRealtime(2.1f);
+        yield return new WaitForSecondsRealtime(2f);
         Destroy(gameObject);
     }
 
