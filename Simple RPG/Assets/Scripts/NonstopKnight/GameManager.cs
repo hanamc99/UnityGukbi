@@ -6,23 +6,45 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private GameObject portal;
-    private PlayerControlNK player;
-    [SerializeField] private Button moveBtn;
-    //[SerializeField] private Button saveBtn;
-    private GameObject[] enemies;
-    private bool isFirst = true;
+    float MAX_RANGE = 14f;
+    [SerializeField] GameObject portal;
+    [SerializeField] Button moveBtn;
+    //[SerializeField] Button saveBtn;
+    PlayerControlNK player;
+    GameObject[] enemies;
+    [SerializeField] GameObject[] monsters = new GameObject[2];
+    [SerializeField] GameObject[] bosses = new GameObject[4];
+    bool isFirst = true;
+    Coroutine nextFloorRoutine;
 
     void Start()
     {
-        enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        this.nextFloorRoutine = null;
+        SpawnEnemies();
         player = FindObjectOfType<PlayerControlNK>();
         player.delAttack = KnightAttack;
         player.delGetWeapon = GetWeapon;
         player.delPortal = NextFloor;
         moveBtn.onClick.AddListener(NextEnemy);
         //saveBtn.onClick.AddListener(LetDataSaved);
+        enemies = GameObject.FindGameObjectsWithTag("Enemy");
         EnemiesInit();
+    }
+
+    void SpawnEnemies()
+    {
+        for(int i = 0; i < DataManage.instance.gi.floor; i++)
+        {
+            Vector3 pos = new Vector3(Random.Range(-MAX_RANGE, MAX_RANGE), 1f, Random.Range(-MAX_RANGE, MAX_RANGE));
+            Instantiate(monsters[Random.Range(0, 2)], pos, monsters[0].transform.rotation);
+        }
+        int k = DataManage.instance.gi.floor;
+        int j =  k / 2;
+        if (0 < k && k % 2 == 0 && k < 9)
+        {
+            Vector3 pos = new Vector3(Random.Range(-MAX_RANGE, MAX_RANGE), 1f, Random.Range(-MAX_RANGE, MAX_RANGE));
+            Instantiate(bosses[j - 1], pos, bosses[j - 1].transform.rotation);
+        }
     }
 
     void LetDataSaved()
@@ -35,9 +57,8 @@ public class GameManager : MonoBehaviour
         foreach (GameObject em in enemies)
         {
             EnemyControlNK emc = em.GetComponent<EnemyControlNK>();
-            //emc.hp += DataManage.instance.gi.floor;
-            emc.GetKnightDamage(player.damage);
-            emc.OnDie = NextEnemy;
+            emc.hp += DataManage.instance.gi.floor;
+            emc.OnDie += NextEnemy;
             emc.DisplayStat();
         }
     }
@@ -99,11 +120,15 @@ public class GameManager : MonoBehaviour
     {
         WeaponDataClass data = DataManage.instance.GetWeaponData(i);
         DataManage.instance.gi.weapon = new Weapon(data.id, data.name, data.damage);
+        
     }
 
     void NextFloor()
     {
-        StartCoroutine(MoveSceneDelay());
+        if(this.nextFloorRoutine == null)
+        {
+            this.nextFloorRoutine = StartCoroutine(MoveSceneDelay());
+        }
     }
 
     IEnumerator MoveSceneDelay()

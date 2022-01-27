@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 9064554423919181740}
   m_Layer: 0
   m_Name: PP_Sword_0222
-  m_TagString: Sword
+  m_TagString: 2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

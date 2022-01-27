@@ -13,7 +13,6 @@ public class DataManage : MonoBehaviour
     private const string GAME_INFO_PATH = "Assets/Resources/GameInfo.json";
 
     private Dictionary<int, WeaponDataClass> dictWeaponData = new Dictionary<int, WeaponDataClass>();
-    //public GameObject[] monsters = new GameObject[2];
 
     void Awake()
     {

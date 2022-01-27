@@ -7,7 +7,6 @@ public class EnemyControlNK : MonoBehaviour
     public int hp;
     private Animator anim;
     private Coroutine rtn;
-    private int knightDmg;
     private ParticleSystem ps;
     public System.Action OnDie;
     private bool dieOnce = false;
@@ -15,11 +14,6 @@ public class EnemyControlNK : MonoBehaviour
     public void DisplayStat()
     {
         Debug.Log(this.hp);
-    }
-
-    public void GetKnightDamage(int d)
-    {
-        this.knightDmg = d;
     }
 
     void Start()
@@ -33,7 +27,7 @@ public class EnemyControlNK : MonoBehaviour
         if (other.CompareTag("Sword"))
         {
             Debug.Log("¥Í¿Ω");
-            hp -= this.knightDmg;
+            hp -= DataManage.instance.gi.weapon.damage;
             if (hp <= 0 && !dieOnce)
             {
                 dieOnce = true;
@@ -67,8 +61,23 @@ public class EnemyControlNK : MonoBehaviour
 
     IEnumerator DestroyAfterLife()
     {
-        yield return new WaitForSecondsRealtime(2f);
+        yield return null;
+        yield return new WaitForSecondsRealtime(GetDieClipLength());
         Destroy(gameObject);
+    }
+
+    private float GetDieClipLength()
+    {
+        AnimatorClipInfo[] clipInfos = this.anim.GetCurrentAnimatorClipInfo(0);
+        float length = 0f;
+        foreach (AnimatorClipInfo aci in clipInfos)
+        {
+            if(aci.clip.name == "Die")
+            {
+                length = aci.clip.length;
+            }
+        }
+        return length;
     }
 
     void Update()

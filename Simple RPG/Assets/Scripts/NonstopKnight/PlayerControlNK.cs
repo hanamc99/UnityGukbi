@@ -6,9 +6,10 @@ public class PlayerControlNK : MonoBehaviour
 {
     private bool isMoving = false;
     private bool isDelay = false;
-    private float speed = 5f;
-    [HideInInspector] public int damage;
+    private float speed = 8f;
     [HideInInspector] public Animator anim;
+    [SerializeField] GameObject[] weapons = new GameObject[5];
+    int equippingWeaponID;
     private Coroutine routine;
     private float attackRange = 1f;
     public System.Action delAttack;
@@ -18,7 +19,8 @@ public class PlayerControlNK : MonoBehaviour
 
     void Start()
     {
-        this.damage = DataManage.instance.gi.weapon.damage;
+        this.equippingWeaponID = DataManage.instance.gi.weapon.id;
+        weapons[equippingWeaponID].SetActive(true);
         anim = GetComponent<Animator>();
     }
 
@@ -31,12 +33,19 @@ public class PlayerControlNK : MonoBehaviour
 
         while (true)
         {
-            transform.Translate(Vector3.forward * speed * Time.deltaTime);
+            if (isMoving)
+            {
+                transform.Translate(Vector3.forward * speed * Time.deltaTime);
+            }
 
             if (Vector3.Distance(pos, transform.position) <= attackRange)
             {
                 isMoving = false;
                 anim.SetBool("IsMoving", isMoving);
+            }
+
+            if (!isMoving)
+            {
                 break;
             }
 
@@ -53,12 +62,19 @@ public class PlayerControlNK : MonoBehaviour
         this.routine = StartCoroutine(MoveRoutine(pos));
     }
 
-    private void OnCollisionStay(Collision collision) //Enter
+    private void OnCollisionEnter(Collision collision) 
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
             isMoving = false;
             anim.SetBool("IsMoving", isMoving);
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.CompareTag("Enemy"))
+        {
             if (!isDelay)
             {
                 isDelay = true;
@@ -76,23 +92,30 @@ public class PlayerControlNK : MonoBehaviour
                     delPortal();
                     break;
             case "1":
-                SendWeaponID(other.tag);
+                EquipWeaponByID(other.tag);
+                Destroy(other.gameObject);
                 break;
             case "2":
-                SendWeaponID(other.tag);
+                EquipWeaponByID(other.tag);
+                Destroy(other.gameObject);
                 break;
             case "3":
-                SendWeaponID(other.tag);
+                EquipWeaponByID(other.tag);
+                Destroy(other.gameObject);
                 break;
             case "4":
-                SendWeaponID(other.tag);
+                EquipWeaponByID(other.tag);
+                Destroy(other.gameObject);
                 break;
         }
     }
 
-    private void SendWeaponID(string num)
+    private void EquipWeaponByID(string num)
     {
         int i = int.Parse(num);
+        weapons[equippingWeaponID].SetActive(false);
+        weapons[i].SetActive(true);
+        this.equippingWeaponID = i;
         delGetWeapon(i);
     }
 
