@@ -1,0 +1,12 @@
+[
+{"id":101,"name":"도검","spriteName":"Icon_ItemIcon_Sword_A"},
+{"id":102,"name":"방패1","spriteName":"Icon_ItemIcon_Shield_B"},
+{"id":103,"name":"방패2","spriteName":"Icon_ItemIcon_Shield_A"},
+{"id":104,"name":"호른","spriteName":"Icon_ItemIcon_Horner"},
+{"id":105,"name":"모래시계","spriteName":"Icon_ItemIcon_Sandglass"},
+{"id":106,"name":"빨간물약","spriteName":"Icon_ItemIcon_Potion_Red"},
+{"id":107,"name":"시계","spriteName":"Icon_ItemIcon_Timer"},
+{"id":108,"name":"클로버","spriteName":"Icon_ItemIcon_Clover"},
+{"id":109,"name":"활","spriteName":"Icon_ItemIcon_Arrow"},
+{"id":110,"name":"신발","spriteName":"Icon_ItemIcon_Talaria"},
+{"id":111,"name":"폭탄","spriteName":"Icon_ItemIcon_Bomb"}]
