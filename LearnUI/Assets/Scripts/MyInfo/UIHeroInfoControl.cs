@@ -20,7 +20,10 @@ public class UIHeroInfoControl : MonoBehaviour
         this.attack.text = info.attack + "";
         this.defence.text = info.defence + "";
         this.health.text = info.health + "";
-        this.gold.text = info.gold + "";
-        this.gem.text = info.gem + "";
+    }
+
+    public void CloseHeroInfo()
+    {
+        gameObject.SetActive(false);
     }
 }

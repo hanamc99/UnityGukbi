@@ -18,14 +18,16 @@ public class UIInventoryControl : MonoBehaviour
             }
             else
             {
-                Sprite spr = atlas.GetSprite(dic[i + 101].spriteName);
+                Sprite spr = atlas.GetSprite(dic[i + 100].spriteName);
                 uiItems[i].Init(spr);
             }
         }
     }
 
-    public void UpdataCount(List<ItemInfo> items)
+    public void UpdataCount()
     {
+        List<ItemInfo> items = DataManager.GetInstance().GetListItemInfo();
+
         for(int i = 0; i < uiItems.Length; i++)
         {
             if(i < items.Count)

@@ -12,8 +12,27 @@ public class GameInfo
     public int heart;
     public int gold;
     public int gem;
+    public HeroInfo hero;
     public List<ItemInfo> inventory;
     public List<StageInfo> stageInfos;
+
+    public void InitGameInfo()
+    {
+        hero = new HeroInfo();
+        hero.Init();
+        inventory = new List<ItemInfo>();
+        InitInventory();
+        stageInfos = new List<StageInfo>();
+    }
+
+    void InitInventory()
+    {
+        Dictionary<int, ItemData> dict = DataManager.GetInstance().GetDictItemData();
+        for (int i = 0; i < dict.Count; i++)
+        {
+            DataManager.GetInstance().GetItem(dict[100 + i].id);
+        }
+    }
 }
 
 
@@ -40,6 +59,25 @@ public class ItemInfo
     }
 }
 
+public class HeroInfo
+{
+    public string userName;
+    public int level;
+    public float exp;
+    public float health;
+    public float attack;
+    public float defence;
+
+    public void Init()
+    {
+        this.userName = "User Name";
+        this.level = 1;
+        this.exp = 0.3f;
+        this.health = 1000;
+        this.attack = 1;
+        this.defence = 1;
+    }
+}
 
 public class StageData
 {

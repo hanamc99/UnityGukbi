@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class UILoginControl : MonoBehaviour
 {
-    [SerializeField] Button loginBtn;
+    public Button loginBtn;
     [SerializeField] Button closeBtn;
     [SerializeField] InputField inputEmail;
     [SerializeField] InputField inputPassword;
@@ -21,10 +21,6 @@ public class UILoginControl : MonoBehaviour
         rememberTog.onValueChanged.AddListener((active) => Debug.Log(active));
     }
 
-    public void Open()
-    {
-        gameObject.SetActive(true);
-    }
     public void Close()
     {
         gameObject.SetActive(false);

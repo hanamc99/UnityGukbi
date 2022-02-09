@@ -10,15 +10,29 @@ public class UIStageBoxControl : MonoBehaviour
 
     void Start()
     {
+        LoadItems();
+    }
+
+    void LoadItems()
+    {
         Dictionary<int, StageData> dict = DataManager.GetInstance().GetDictStageData();
 
-        for(int i = 0; i < dict.Count; i++)
+        for (int i = 0; i < dict.Count; i++)
         {
             GameObject go = Instantiate(slotPrefab);
             go.transform.SetParent(grid.transform);
             UIStageSlotControl slot = go.GetComponent<UIStageSlotControl>();
             slot.InitStageNum(i + 1);
             slots.Add(slot);
+        }
+    }
+
+    public void ShowSlots()
+    {
+        foreach(UIStageSlotControl slot in slots)
+        {
+            slot.MarkStar();
+            slot.OpenLock();
         }
     }
 
@@ -34,4 +48,5 @@ public class UIStageBoxControl : MonoBehaviour
         int index = list[list.Count - 1].id - 100;
         slots[index].OpenLock();
     }
+
 }

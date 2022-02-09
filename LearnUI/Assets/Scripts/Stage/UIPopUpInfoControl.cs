@@ -10,11 +10,6 @@ public class UIPopUpInfoControl : MonoBehaviour
     public Image[] availItemImage = new Image[3];
     public Text[] availItemAmountText = new Text[3];
 
-    void Start()
-    {
-        
-    }
-
     public void ClosePopUpInfo()
     {
         gameObject.SetActive(false);

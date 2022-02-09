@@ -8,7 +8,7 @@ public class UIHomeControl : MonoBehaviour
 {
     public Button startBtn;
     [SerializeField] Button fbkBtn;
-    [SerializeField] Button itemsBtn;
+    public Button itemsBtn;
     [SerializeField] Button shopBtn;
     [SerializeField] Button messagesBtn;
     [SerializeField] Button missionBtn;
@@ -17,9 +17,6 @@ public class UIHomeControl : MonoBehaviour
     [SerializeField] Slider hpSlider;
     [SerializeField] Slider expSlider;
     [SerializeField] TextMeshProUGUI hpText;
-    [SerializeField] float hp;
-    [Range(0f, 1f)]
-    [SerializeField] float exp;
 
     void Start()
     {
@@ -31,12 +28,13 @@ public class UIHomeControl : MonoBehaviour
         missionBtn.onClick.AddListener(() => Debug.Log("Hello Missions!"));
         rankingBtn.onClick.AddListener(() => Debug.Log("Hello Ranking!"));
         settingsBtn.onClick.AddListener(() => Debug.Log("Hello Settings!"));
+        WriteProfileBar();
     }
 
-    void Update()
+    void WriteProfileBar()
     {
-        this.hpSlider.value = this.hp / 1000;
-        this.expSlider.value = this.exp;
-        this.hpText.text = this.hp + "/1000";
+        hpSlider.value = DataManager.GetInstance().GetHeroInfo().health / 1000;
+        expSlider.value = DataManager.GetInstance().GetHeroInfo().exp;
+        hpText.text = DataManager.GetInstance().GetHeroInfo().health + "/1000";
     }
 }

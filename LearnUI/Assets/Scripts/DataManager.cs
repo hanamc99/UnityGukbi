@@ -20,6 +20,11 @@ public class DataManager
         return dictStageData;
     }
 
+    public Dictionary<int, ItemData> GetDictItemData()
+    {
+        return dictItemData;
+    }
+
     public MissionData GetMissionData(int id)
     {
         return dictMissionData[id];
@@ -46,9 +51,19 @@ public class DataManager
         return 0;
     }
 
+    public List<ItemInfo> GetListItemInfo()
+    {
+        return gi.inventory;
+    }
+
     public List<StageInfo> GetListStageInfo()
     {
         return gi.stageInfos;
+    }
+
+    public HeroInfo GetHeroInfo()
+    {
+        return gi.hero;
     }
 
     public static DataManager GetInstance()
@@ -77,8 +92,7 @@ public class DataManager
         if (!File.Exists(Application.persistentDataPath + "/GameInfo.json"))
         {
             gi = new GameInfo();
-            gi.inventory = new List<ItemInfo>();
-            gi.stageInfos = new List<StageInfo>();
+            gi.InitGameInfo();
             SaveGameInfo();
         }
         else
@@ -105,7 +119,7 @@ public class DataManager
             }
         }
         ItemInfo item = new ItemInfo(id);
-        item.count = 1;
+        item.count = 0;
         gi.inventory.Add(item);
     }
 
