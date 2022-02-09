@@ -11,7 +11,7 @@ public class InfoManager : MonoBehaviour
     [SerializeField] UIInventoryControl uiInventory;
 
     HeroInfo hero;
-    List<Item> itemlist;
+    List<ItemInfo> itemlist;
 
     Dictionary<int, ItemData> dictItemData = new Dictionary<int, ItemData>();
 
@@ -64,11 +64,11 @@ public class InfoManager : MonoBehaviour
         if (File.Exists(Application.persistentDataPath + "/Item_info.json"))
         {
             string json = File.ReadAllText(Application.persistentDataPath + "/Item_info.json");
-            Item[] items = JsonConvert.DeserializeObject<Item[]>(json);
+            ItemInfo[] items = JsonConvert.DeserializeObject<ItemInfo[]>(json);
             this.itemlist = items.ToList();
         } else
         {
-            this.itemlist = new List<Item>();
+            this.itemlist = new List<ItemInfo>();
             for(int i = 0; i < dictItemData.Count; i++)
             {
                 GetItem(dictItemData[i + 101].id);
@@ -93,7 +93,7 @@ public class InfoManager : MonoBehaviour
 
     void GetItem(int id)
     {
-        foreach(Item item in itemlist)
+        foreach(ItemInfo item in itemlist)
         {
             if (item.id == id)
             {
@@ -102,7 +102,7 @@ public class InfoManager : MonoBehaviour
                 return;
             } 
         }
-        Item item1 = new Item(id);
+        ItemInfo item1 = new ItemInfo(id);
         item1.count = 0;
         itemlist.Add(item1);
     }

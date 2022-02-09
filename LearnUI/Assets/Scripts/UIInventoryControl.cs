@@ -24,7 +24,7 @@ public class UIInventoryControl : MonoBehaviour
         }
     }
 
-    public void UpdataCount(List<Item> items)
+    public void UpdataCount(List<ItemInfo> items)
     {
         for(int i = 0; i < uiItems.Length; i++)
         {
