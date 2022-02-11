@@ -66,6 +66,26 @@ public class DataManager
         return gi.hero;
     }
 
+    public int GetGold()
+    {
+        return gi.gold;
+    }
+
+    public int GetGem()
+    {
+        return gi.gem;
+    }
+
+    public int GetHeart()
+    {
+        return gi.heart;
+    }
+
+    public void IncreaseHeart()
+    {
+        gi.heart++;
+    }
+
     public static DataManager GetInstance()
     {
         if(DataManager.instance == null)
