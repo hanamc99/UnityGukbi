@@ -32,13 +32,13 @@ public class UIStageSlotControl : MonoBehaviour
 
     void Start()
     {
-        OpenLock();
-        MarkStar();
         if (popUpInfo.gameObject.activeSelf)
         {
             popUpInfo.gameObject.SetActive(false);
             lockedPopUp.gameObject.SetActive(false);
         }
+        OpenLock();
+        MarkStar();
     }
 
     void SlotBtnInit()
@@ -125,26 +125,21 @@ public class UIStageSlotControl : MonoBehaviour
         }
         else
         {
+            Dictionary<int, StageData> dict = DataManager.GetInstance().GetDictStageData();
+            StageData data = dict[this.id];
+            if (data.requireLevel <= DataManager.GetInstance().GetHeroInfo().level)
+            {
+                this.isLocked = false;
+                this.lockIcon.gameObject.SetActive(false);
+                this.gameObject.GetComponent<Image>().sprite = slotFrame[0];
+            }
+
             List<StageInfo> list = DataManager.GetInstance().GetListStageInfo();
             foreach (StageInfo info in list)
             {
-                Dictionary<int, StageData> dict = DataManager.GetInstance().GetDictStageData();
-                StageData data = dict[this.id];
-                if (data.requireLevel <= DataManager.GetInstance().GetHeroInfo().level)
+                if (info.id == id)
                 {
-                    if (info.id == id)
-                    {
-                        this.isLocked = false;
-                        this.lockIcon.gameObject.SetActive(false);
-                        this.gameObject.GetComponent<Image>().sprite = slotFrame[1];
-                    }
-                    else if (info.id + 1 == id)
-                    {
-                        this.isLocked = false;
-                        this.lockIcon.gameObject.SetActive(false);
-                        this.gameObject.GetComponent<Image>().sprite = slotFrame[0];
-                        break;
-                    }
+                    this.gameObject.GetComponent<Image>().sprite = slotFrame[1];
                 }
             }
         }
