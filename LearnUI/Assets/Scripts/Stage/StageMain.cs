@@ -1,13 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Newtonsoft.Json;
-using System.IO;
-using TMPro;
 
 public class StageMain : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI curLevelText;
+    [SerializeField] UIStageControl uiStage;
 
     void Awake()
     {
@@ -47,7 +44,7 @@ public class StageMain : MonoBehaviour
     public void ShowLevelUp()
     {
         DataManager.GetInstance().GetHeroInfo().level++;
-        curLevelText.text = "Lv." + DataManager.GetInstance().GetHeroInfo().level;
+        uiStage.curLevelText.text = "Lv." + DataManager.GetInstance().GetHeroInfo().level;
         DataManager.GetInstance().SaveGameInfo();
     }
 }

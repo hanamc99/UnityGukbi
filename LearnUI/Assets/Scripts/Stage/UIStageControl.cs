@@ -2,9 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+using UnityEngine.SceneManagement;
 
 public class UIStageControl : MonoBehaviour
 {
+    public Button btnHome;
+    public TextMeshProUGUI curLevelText;
     [SerializeField] Text starAmountText;
     [SerializeField] Text goldText;
     [SerializeField] Text gemText;
@@ -84,5 +88,10 @@ public class UIStageControl : MonoBehaviour
             a += info.star;
         }
         starAmountText.text = a + "";
+    }
+
+    public void MoveToLobbyScene()
+    {
+        SceneManager.LoadScene(0);
     }
 }
