@@ -31,8 +31,8 @@ public class UIStageBoxControl : MonoBehaviour
     {
         foreach(UIStageSlotControl slot in slots)
         {
-            slot.MarkStar();
             slot.OpenLock();
+            slot.MarkStar();
         }
     }
 

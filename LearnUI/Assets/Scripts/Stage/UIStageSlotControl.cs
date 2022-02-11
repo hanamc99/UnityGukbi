@@ -13,6 +13,7 @@ public class UIStageSlotControl : MonoBehaviour
     int stageNum;
     [SerializeField] GameObject[] goStar = new GameObject[3];
     UIPopUpInfoControl popUpInfo;
+    UILockedPopUpControl lockedPopUp;
     Button btnPopUpInfo;
     [SerializeField] SpriteAtlas atlas;
     [SerializeField] Sprite[] slotFrame = new Sprite[2];
@@ -36,24 +37,29 @@ public class UIStageSlotControl : MonoBehaviour
         if (popUpInfo.gameObject.activeSelf)
         {
             popUpInfo.gameObject.SetActive(false);
+            lockedPopUp.gameObject.SetActive(false);
         }
     }
 
     void SlotBtnInit()
     {
         popUpInfo = FindObjectOfType<UIPopUpInfoControl>();
+        lockedPopUp = FindObjectOfType<UILockedPopUpControl>();
         btnPopUpInfo = GetComponent<Button>();
         btnPopUpInfo.onClick.AddListener(PopUpInfo);
     }
 
     void PopUpInfo()
     {
-        if (isLocked)
-        {
-            return;
-        }
         Dictionary<int, StageData> dict = DataManager.GetInstance().GetDictStageData();
         StageData data = dict[id];
+        if (isLocked)
+        {
+            lockedPopUp.stageNameText.text = data.name;
+            lockedPopUp.minLevelText.text = "Required Level : " + data.requireLevel;
+            lockedPopUp.gameObject.SetActive(true);
+            return;
+        }
         popUpInfo.stageNameText.text = data.name;
         popUpInfo.missionNameText.text = DataManager.GetInstance().GetMissionData(data.stage_mission_id).name;
         for(int i = 0; i < 3; i++)
@@ -82,8 +88,9 @@ public class UIStageSlotControl : MonoBehaviour
                 popUpInfo.availItemImage[i].gameObject.SetActive(false);
                 continue;
             }
+            popUpInfo.itemIds[i] = itemdata.id;
             popUpInfo.availItemImage[i].sprite = atlas.GetSprite(itemdata.spriteName);
-            popUpInfo.availItemAmountText[i].text = DataManager.GetInstance().GetItemInfoAmount(itemdata.id) + "";
+            popUpInfo.availItemAmountText[i].GetComponentInChildren<Text>().text = DataManager.GetInstance().GetItemInfoAmount(itemdata.id) + "";
             popUpInfo.availItemImage[i].gameObject.SetActive(true);
         }
 
@@ -121,12 +128,23 @@ public class UIStageSlotControl : MonoBehaviour
             List<StageInfo> list = DataManager.GetInstance().GetListStageInfo();
             foreach (StageInfo info in list)
             {
-                if (info.id + 1 == id)
+                Dictionary<int, StageData> dict = DataManager.GetInstance().GetDictStageData();
+                StageData data = dict[this.id];
+                if (data.requireLevel <= DataManager.GetInstance().GetHeroInfo().level)
                 {
-                    this.isLocked = false;
-                    this.lockIcon.gameObject.SetActive(false);
-                    this.gameObject.GetComponent<Image>().sprite = slotFrame[0];
-                    break;
+                    if (info.id == id)
+                    {
+                        this.isLocked = false;
+                        this.lockIcon.gameObject.SetActive(false);
+                        this.gameObject.GetComponent<Image>().sprite = slotFrame[1];
+                    }
+                    else if (info.id + 1 == id)
+                    {
+                        this.isLocked = false;
+                        this.lockIcon.gameObject.SetActive(false);
+                        this.gameObject.GetComponent<Image>().sprite = slotFrame[0];
+                        break;
+                    }
                 }
             }
         }

@@ -29,13 +29,20 @@ public class StageMain : MonoBehaviour
     public void ShowClearStage()
     {
         DataManager.GetInstance().ClearStage(100, Random.Range(1,4));
+        DataManager.GetInstance().SaveGameInfo();
     }
     public void ShowClearStage2()
     {
         DataManager.GetInstance().ClearStage(101, Random.Range(1, 4));
+        DataManager.GetInstance().SaveGameInfo();
     }
     public void ShowClearStage3()
     {
         DataManager.GetInstance().ClearStage(102, Random.Range(1, 4));
+        DataManager.GetInstance().SaveGameInfo();
+    }
+    public void ShowLevelUp()
+    {
+        DataManager.GetInstance().GetHeroInfo().level++;
     }
 }

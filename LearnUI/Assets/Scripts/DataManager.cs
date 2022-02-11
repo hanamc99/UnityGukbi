@@ -123,6 +123,21 @@ public class DataManager
         gi.inventory.Add(item);
     }
 
+    public void UseItem(int id)
+    {
+        foreach (ItemInfo info in gi.inventory)
+        {
+            if (info.id == id)
+            {
+                if (info.count > 0)
+                {
+                    info.count--;
+                }
+                return;
+            }
+        }
+    }
+
     public void ClearStage(int id, int star)
     {
         if(star < 1)
