@@ -6,4 +6,20 @@
 {"id":"104","name":"Stage 5","requireLevel":"8","stage_mission_id":"1000","availableItem_id_0":"100","availableItem_id_1":"106","availableItem_id_2":"107"},
 {"id":"105","name":"Stage 6","requireLevel":"9","stage_mission_id":"1000","availableItem_id_0":"100","availableItem_id_1":"106","availableItem_id_2":"107"},
 {"id":"106","name":"Stage 7","requireLevel":"10","stage_mission_id":"1000","availableItem_id_0":"100","availableItem_id_1":"106","availableItem_id_2":"107"},
-{"id":"107","name":"Stage 8","requireLevel":"11","stage_mission_id":"1000","availableItem_id_0":"100","availableItem_id_1":"106","availableItem_id_2":"107"}]
+{"id":"107","name":"Stage 8","requireLevel":"11","stage_mission_id":"1000","availableItem_id_0":"100","availableItem_id_1":"106","availableItem_id_2":"107"},
+{"id":"108","name":"Stage 7","requireLevel":"12","stage_mission_id":"1000","availableItem_id_0":"100","availableItem_id_1":"106","availableItem_id_2":"107"},
+{"id":"109","name":"Stage 7","requireLevel":"13","stage_mission_id":"1000","availableItem_id_0":"100","availableItem_id_1":"106","availableItem_id_2":"107"},
+{"id":"110","name":"Stage 7","requireLevel":"14","stage_mission_id":"1000","availableItem_id_0":"100","availableItem_id_1":"106","availableItem_id_2":"107"},
+{"id":"111","name":"Stage 7","requireLevel":"15","stage_mission_id":"1000","availableItem_id_0":"100","availableItem_id_1":"106","availableItem_id_2":"107"},
+{"id":"112","name":"Stage 7","requireLevel":"16","stage_mission_id":"1000","availableItem_id_0":"100","availableItem_id_1":"106","availableItem_id_2":"107"},
+{"id":"113","name":"Stage 7","requireLevel":"17","stage_mission_id":"1000","availableItem_id_0":"100","availableItem_id_1":"106","availableItem_id_2":"107"},
+{"id":"114","name":"Stage 7","requireLevel":"18","stage_mission_id":"1000","availableItem_id_0":"100","availableItem_id_1":"106","availableItem_id_2":"107"},
+{"id":"115","name":"Stage 7","requireLevel":"19","stage_mission_id":"1000","availableItem_id_0":"100","availableItem_id_1":"106","availableItem_id_2":"107"},
+{"id":"116","name":"Stage 7","requireLevel":"20","stage_mission_id":"1000","availableItem_id_0":"100","availableItem_id_1":"106","availableItem_id_2":"107"},
+{"id":"117","name":"Stage 7","requireLevel":"21","stage_mission_id":"1000","availableItem_id_0":"100","availableItem_id_1":"106","availableItem_id_2":"107"},
+{"id":"118","name":"Stage 19","requireLevel":"22","stage_mission_id":"1000","availableItem_id_0":"100","availableItem_id_1":"106","availableItem_id_2":"107"},
+{"id":"119","name":"Stage 20","requireLevel":"23","stage_mission_id":"1000","availableItem_id_0":"100","availableItem_id_1":"106","availableItem_id_2":"107"},
+{"id":"120","name":"Stage 21","requireLevel":"24","stage_mission_id":"1000","availableItem_id_0":"100","availableItem_id_1":"106","availableItem_id_2":"107"},
+{"id":"121","name":"Stage 22","requireLevel":"25","stage_mission_id":"1000","availableItem_id_0":"100","availableItem_id_1":"106","availableItem_id_2":"107"},
+{"id":"122","name":"Stage 23","requireLevel":"26","stage_mission_id":"1000","availableItem_id_0":"100","availableItem_id_1":"106","availableItem_id_2":"107"}
+]

@@ -6,7 +6,7 @@ using UnityEngine.U2D;
 
 public class UIStageSlotControl : MonoBehaviour
 {
-    int id;
+    public int id;
     bool isLocked = true;
     [SerializeField] Image lockIcon;
     [SerializeField] Text stageNumText;
@@ -43,8 +43,8 @@ public class UIStageSlotControl : MonoBehaviour
 
     void SlotBtnInit()
     {
-        popUpInfo = FindObjectOfType<UIPopUpInfoControl>();
-        lockedPopUp = FindObjectOfType<UILockedPopUpControl>();
+        popUpInfo = GameObject.Find("UISelectStage").transform.Find("PopUpInfo").GetComponent<UIPopUpInfoControl>();
+        lockedPopUp = GameObject.Find("UISelectStage").transform.Find("LockedPopUp").GetComponent<UILockedPopUpControl>();
         btnPopUpInfo = GetComponent<Button>();
         btnPopUpInfo.onClick.AddListener(PopUpInfo);
     }
