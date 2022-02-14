@@ -77,10 +77,6 @@ public class UIStageBoxControl : MonoBehaviour
             slot.InitStageNum(i + 1);
             slots.Add(slot);
         }
-        foreach (UIStageSlotControl slot2 in slots)
-        {
-            Debug.Log(slot2.id);
-        }
     }
 
     public void ShowSlots()
@@ -104,5 +100,4 @@ public class UIStageBoxControl : MonoBehaviour
         int index = list[list.Count - 1].id - 100;
         slots[index].OpenLock();
     }
-
 }

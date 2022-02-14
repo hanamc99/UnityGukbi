@@ -14,10 +14,27 @@ public class DataManager
     Dictionary<int, ItemData> dictItemData = new Dictionary<int, ItemData>();
     Dictionary<int, StageData> dictStageData = new Dictionary<int, StageData>();
     Dictionary<int, MissionData> dictMissionData = new Dictionary<int, MissionData>();
+    Dictionary<int, ShopData> dictShopData = new Dictionary<int, ShopData>();
+    Dictionary<int, BudgetData> dictBudgetData = new Dictionary<int, BudgetData>();
 
     public Dictionary<int, StageData> GetDictStageData()
     {
         return dictStageData;
+    }
+
+    public Dictionary<int, ShopData> GetDictShopData()
+    {
+        return dictShopData;
+    }
+
+    public ShopData GetShopData(int id)
+    {
+        return dictShopData[id];
+    }
+
+    public BudgetData GetBudgetData(int id)
+    {
+        return dictBudgetData[id];
     }
 
     public Dictionary<int, ItemData> GetDictItemData()
@@ -105,6 +122,12 @@ public class DataManager
 
         string json3 = Resources.Load<TextAsset>("Data/Mission_data").text;
         dictMissionData = JsonConvert.DeserializeObject<MissionData[]>(json3).ToDictionary(x => x.id);
+
+        string json4 = Resources.Load<TextAsset>("Data/Shop_data").text;
+        dictShopData = JsonConvert.DeserializeObject<ShopData[]>(json4).ToDictionary(x => x.id);
+
+        string json5 = Resources.Load<TextAsset>("Data/Budget_data").text;
+        dictBudgetData = JsonConvert.DeserializeObject<BudgetData[]>(json5).ToDictionary(x => x.id);
     }
 
     public void DiscernUserType()
