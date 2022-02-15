@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: MissionAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 97bae8163125a4811a8a9c09ad34e514, type: 3}
+    - {fileID: 2800000, guid: f41535b58b3014601b2338de5c554be1, type: 3}
+    - {fileID: 2800000, guid: 7e30376514d7c44acbc0f231178e446a, type: 3}
+    - {fileID: 2800000, guid: ade56b7149c6940ecbc3fe38cd065543, type: 3}
+    - {fileID: 2800000, guid: 571e655c7ab4a4d7abd6f5e57b144596, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: ade56b7149c6940ecbc3fe38cd065543, type: 3}
+  - {fileID: 21300000, guid: 7e30376514d7c44acbc0f231178e446a, type: 3}
+  - {fileID: 21300000, guid: f41535b58b3014601b2338de5c554be1, type: 3}
+  - {fileID: 21300000, guid: 97bae8163125a4811a8a9c09ad34e514, type: 3}
+  - {fileID: 21300000, guid: 571e655c7ab4a4d7abd6f5e57b144596, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Icon_ImageIcon_Coin
+  - Icon_ImageIcon_Soulgem
+  - Image_DefeatScene_Skull1
+  - Icon_ShopIcon_Coin_01
+  - Icon_ImageIcon_Gem
+  m_RenderDataMap: {}
+  m_Tag: MissionAtlas
+  m_IsVariant: 0

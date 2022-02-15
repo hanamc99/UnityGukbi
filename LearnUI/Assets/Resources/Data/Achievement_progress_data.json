@@ -1,0 +1,11 @@
+[
+{"id":100,"name":"Collect 100 Golds","rewardText":5,"numForPercentage":100},
+{"id":101,"name":"Collect 1000 Golds","rewardText":10,"numForPercentage":1000},
+{"id":102,"name":"Collect 10000 Golds","rewardText":15,"numForPercentage":10000},
+{"id":103,"name":"Collect 100000 Golds","rewardText":20,"numForPercentage":100000},
+{"id":104,"name":"Collect 1000000 Golds","rewardText":25,"numForPercentage":1000000},
+{"id":105,"name":"Kill 300 monsters","rewardText":300,"numForPercentage":300},
+{"id":106,"name":"Kill 600 monsters","rewardText":600,"numForPercentage":600},
+{"id":107,"name":"Kill 900 monsters","rewardText":900,"numForPercentage":900},
+{"id":108,"name":"Kill 1200 monsters","rewardText":1200,"numForPercentage":1200},
+{"id":109,"name":"Kill 1500 monsters","rewardText":1500,"numForPercentage":1500}]

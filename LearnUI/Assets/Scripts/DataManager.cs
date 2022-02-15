@@ -16,10 +16,27 @@ public class DataManager
     Dictionary<int, MissionData> dictMissionData = new Dictionary<int, MissionData>();
     Dictionary<int, ShopData> dictShopData = new Dictionary<int, ShopData>();
     Dictionary<int, BudgetData> dictBudgetData = new Dictionary<int, BudgetData>();
+    Dictionary<int, AchievementData> dictAchievementData = new Dictionary<int, AchievementData>();
+    Dictionary<int, AchievementProgressData> dictAchievementProgressData = new Dictionary<int, AchievementProgressData>();
 
     public Dictionary<int, StageData> GetDictStageData()
     {
         return dictStageData;
+    }
+
+    public Dictionary<int, AchievementData> GetDictAchievementData()
+    {
+        return dictAchievementData;
+    }
+
+    public AchievementData GetAchievementData(int id)
+    {
+        return dictAchievementData[id];
+    }
+
+    public AchievementProgressData GetAchiProgressData(int id)
+    {
+        return dictAchievementProgressData[id];
     }
 
     public Dictionary<int, ShopData> GetDictShopData()
@@ -98,10 +115,31 @@ public class DataManager
         return gi.heart;
     }
 
-    public void IncreaseHeart()
+    public AchievementInfo GetAchiInfo(int id)
     {
-        gi.heart++;
+        foreach(AchievementInfo info in gi.achievementBook)
+        {
+            if(info.id == id)
+            {
+                return info;
+            }
+        }
+        return null;
     }
+
+
+    public int GetSliderReference(int typeIndex)
+    {
+        switch (typeIndex)
+        {
+            case 0:
+                return gi.collectedGoldSum;
+            case 1:
+                return gi.killedMonsterSum;
+        }
+        return 0;
+    }
+
 
     public static DataManager GetInstance()
     {
@@ -128,6 +166,12 @@ public class DataManager
 
         string json5 = Resources.Load<TextAsset>("Data/Budget_data").text;
         dictBudgetData = JsonConvert.DeserializeObject<BudgetData[]>(json5).ToDictionary(x => x.id);
+
+        string json6 = Resources.Load<TextAsset>("Data/Achievement_data").text;
+        dictAchievementData = JsonConvert.DeserializeObject<AchievementData[]>(json6).ToDictionary(x => x.id);
+
+        string json7 = Resources.Load<TextAsset>("Data/Achievement_progress_data").text;
+        dictAchievementProgressData = JsonConvert.DeserializeObject<AchievementProgressData[]>(json7).ToDictionary(x => x.id);
     }
 
     public void DiscernUserType()
@@ -199,5 +243,20 @@ public class DataManager
             }
         }
         gi.stageInfos.Add(new StageInfo(id, star));
+    }
+
+    public void AddUpCollectedGold(int amount)
+    {
+        gi.gold += amount;
+        gi.collectedGoldSum += amount;
+    }
+
+    public void AddUpKilledMonster(int amount)
+    {
+        gi.killedMonsterSum += amount;
+    }
+    public void IncreaseHeart()
+    {
+        gi.heart++;
     }
 }

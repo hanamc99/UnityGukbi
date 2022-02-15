@@ -15,6 +15,11 @@ public class GameInfo
     public HeroInfo hero;
     public List<ItemInfo> inventory;
     public List<StageInfo> stageInfos;
+    public List<AchievementInfo> achievementBook;
+
+    //for be referenced by achievement's slider.
+    public int collectedGoldSum;
+    public int killedMonsterSum;
 
     public void InitGameInfo()
     {
@@ -23,6 +28,8 @@ public class GameInfo
         inventory = new List<ItemInfo>();
         InitInventory();
         stageInfos = new List<StageInfo>();
+        achievementBook = new List<AchievementInfo>();
+        InitAchievementBook();
     }
 
     void InitInventory()
@@ -31,6 +38,15 @@ public class GameInfo
         for (int i = 0; i < dict.Count; i++)
         {
             DataManager.GetInstance().GetItem(dict[100 + i].id);
+        }
+    }
+
+    void InitAchievementBook()
+    {
+        Dictionary<int, AchievementData> dict = DataManager.GetInstance().GetDictAchievementData();
+        foreach(int data in dict.Keys)
+        {
+            achievementBook.Add(new AchievementInfo(data, 0, false));
         }
     }
 }
@@ -79,6 +95,20 @@ public class HeroInfo
     }
 }
 
+public class AchievementInfo
+{
+    public int id;
+    public int star;
+    public bool isFull;
+
+    public AchievementInfo(int id, int star, bool isFull)
+    {
+        this.id = id;
+        this.star = star;
+        this.isFull = isFull;
+    }
+}
+
 public class StageData
 {
     public int id;
@@ -119,4 +149,22 @@ public class BudgetData
     public int id;
     public string name;
     public string spriteName;
+    public string textColor;
+}
+
+public class AchievementData
+{
+    public int id;
+    public string spriteName;
+    public int budgetId;
+    public int progressId;
+    public int typeIndex;
+}
+
+public class AchievementProgressData
+{
+    public int id;
+    public string name;
+    public string rewardText;
+    public int numForPercentage;
 }

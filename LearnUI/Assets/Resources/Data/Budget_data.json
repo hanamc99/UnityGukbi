@@ -1,5 +1,5 @@
 [
-{"id":"1000","name":"soulGem","spriteName":"Icon_ImageIcon_Soulgem"},
-{"id":"1001","name":"gold","spriteName":"Icon_ImageIcon_Coin"},
-{"id":"1002","name":"gem","spriteName":"Icon_ImageIcon_Gem"},
-{"id":"1003","name":"cash","spriteName":"Icon_PictoIcon_Dollar"}]
+{"id":"1000","name":"soulGem","spriteName":"Icon_ImageIcon_Soulgem","textColor":"<color=#FF3737>"},
+{"id":"1001","name":"gold","spriteName":"Icon_ImageIcon_Coin","textColor":"<color=#FAB018>"},
+{"id":"1002","name":"gem","spriteName":"Icon_ImageIcon_Gem","textColor":"<color=#4388D7>"},
+{"id":"1003","name":"cash","spriteName":"Icon_PictoIcon_Dollar","textColor":"<color=#877862>"}]
