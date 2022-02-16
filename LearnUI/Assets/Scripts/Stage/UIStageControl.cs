@@ -36,7 +36,7 @@ public class UIStageControl : MonoBehaviour
             {
                 min = 5;
                 sec = 0.9f;
-                DataManager.GetInstance().IncreaseHeart();
+                DataManager.GetInstance().IncreaseHeart(1);
                 UpdateHeart();
             }
             else

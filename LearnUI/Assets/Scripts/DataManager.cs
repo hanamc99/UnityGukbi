@@ -245,7 +245,7 @@ public class DataManager
         gi.stageInfos.Add(new StageInfo(id, star));
     }
 
-    public void AddUpCollectedGold(int amount)
+    public void AddUpGold(int amount)
     {
         gi.gold += amount;
         gi.collectedGoldSum += amount;
@@ -255,8 +255,23 @@ public class DataManager
     {
         gi.killedMonsterSum += amount;
     }
-    public void IncreaseHeart()
+    
+    public void IncreaseHeart(int amount)
     {
-        gi.heart++;
+        gi.heart += amount;
+    }
+
+    public void PressBtnClaim(int budgetId, string rewardText)
+    {
+        int amount = int.Parse(rewardText);
+        switch (budgetId)
+        {
+            case 1000:
+                IncreaseHeart(amount);
+                break;
+            case 1001:
+                AddUpGold(amount);
+                break;
+        }
     }
 }
