@@ -18,6 +18,7 @@ public class DataManager
     Dictionary<int, BudgetData> dictBudgetData = new Dictionary<int, BudgetData>();
     Dictionary<int, AchievementData> dictAchievementData = new Dictionary<int, AchievementData>();
     Dictionary<int, AchievementProgressData> dictAchievementProgressData = new Dictionary<int, AchievementProgressData>();
+    Dictionary<int, LanguageData> dictLanguageData = new Dictionary<int, LanguageData>();
 
     public Dictionary<int, StageData> GetDictStageData()
     {
@@ -62,6 +63,11 @@ public class DataManager
     public MissionData GetMissionData(int id)
     {
         return dictMissionData[id];
+    }
+
+    public LanguageData GetLanguageData(int id)
+    {
+        return dictLanguageData[id];
     }
 
     public ItemData GetItemData(int id)
@@ -140,7 +146,6 @@ public class DataManager
         return 0;
     }
 
-
     public static DataManager GetInstance()
     {
         if(DataManager.instance == null)
@@ -172,6 +177,9 @@ public class DataManager
 
         string json7 = Resources.Load<TextAsset>("Data/Achievement_progress_data").text;
         dictAchievementProgressData = JsonConvert.DeserializeObject<AchievementProgressData[]>(json7).ToDictionary(x => x.id);
+
+        string json8 = Resources.Load<TextAsset>("Data/Language_data").text;
+        dictLanguageData = JsonConvert.DeserializeObject<LanguageData[]>(json8).ToDictionary(x => x.id);
     }
 
     public void DiscernUserType()

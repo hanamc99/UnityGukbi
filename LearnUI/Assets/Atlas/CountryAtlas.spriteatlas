@@ -1,0 +1,114 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: CountryAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 733c5fc5a2c1f47b495fbf4913fa0cb7, type: 3}
+    - {fileID: 2800000, guid: 09ede834c69ca4bb188be59889859ccc, type: 3}
+    - {fileID: 2800000, guid: d9be2be5506ed4442add30be4e24b547, type: 3}
+    - {fileID: 2800000, guid: 4e2b69ea94c204a988adf6bb36fb843e, type: 3}
+    - {fileID: 2800000, guid: c253141116dca4a5a9a8991838831a3f, type: 3}
+    - {fileID: 2800000, guid: 1d037a4df63b94ac5afa2ba5f49b945c, type: 3}
+    - {fileID: 2800000, guid: 82b0d7526bc104423950347a39c211aa, type: 3}
+    - {fileID: 2800000, guid: 8750a03d0cee04cb7bd86b53b3e08ac2, type: 3}
+    - {fileID: 2800000, guid: 4388bd563313043e4b5cfddf8613614d, type: 3}
+    - {fileID: 2800000, guid: 7d1c5b9e1880e41ed88e478a7098e440, type: 3}
+    - {fileID: 2800000, guid: 05416cc56bd2a4ede84891612b248887, type: 3}
+    - {fileID: 2800000, guid: 4b47b6250f3b949a7b8b5ed13617c25c, type: 3}
+    - {fileID: 2800000, guid: 4c48dc36d2155457fb5370c085b9583f, type: 3}
+    - {fileID: 2800000, guid: d87a1142cdc2040f8aa3899c36b9592f, type: 3}
+    - {fileID: 2800000, guid: a6265bcffb3cd44d6834a3092299c946, type: 3}
+    - {fileID: 2800000, guid: 10244c258654748c19c7af8b52509ea8, type: 3}
+    - {fileID: 2800000, guid: 55b123fb5ce304e20af1ccd4f5012745, type: 3}
+    - {fileID: 2800000, guid: d7dac206bb0cd42989f97a102b026e75, type: 3}
+    - {fileID: 2800000, guid: 971f73a1bbf154a55a99c9d08edffac3, type: 3}
+    - {fileID: 2800000, guid: 4c53158437be24c9bab141118cd87085, type: 3}
+    - {fileID: 2800000, guid: 1f2b962acd7b44b7e8cad4878c18a558, type: 3}
+    - {fileID: 2800000, guid: 5021b3764fd954e6fa71fb9c5d135adf, type: 3}
+    - {fileID: 2800000, guid: ecfda64219ea6442782cfe6e10c91608, type: 3}
+    - {fileID: 2800000, guid: b2353e16a769d4b44ae16df7393cd087, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: c253141116dca4a5a9a8991838831a3f, type: 3}
+  - {fileID: 21300000, guid: 971f73a1bbf154a55a99c9d08edffac3, type: 3}
+  - {fileID: 21300000, guid: d87a1142cdc2040f8aa3899c36b9592f, type: 3}
+  - {fileID: 21300000, guid: ecfda64219ea6442782cfe6e10c91608, type: 3}
+  - {fileID: 21300000, guid: 82b0d7526bc104423950347a39c211aa, type: 3}
+  - {fileID: 21300000, guid: 09ede834c69ca4bb188be59889859ccc, type: 3}
+  - {fileID: 21300000, guid: 4c53158437be24c9bab141118cd87085, type: 3}
+  - {fileID: 21300000, guid: 4b47b6250f3b949a7b8b5ed13617c25c, type: 3}
+  - {fileID: 21300000, guid: 10244c258654748c19c7af8b52509ea8, type: 3}
+  - {fileID: 21300000, guid: 05416cc56bd2a4ede84891612b248887, type: 3}
+  - {fileID: 21300000, guid: 733c5fc5a2c1f47b495fbf4913fa0cb7, type: 3}
+  - {fileID: 21300000, guid: d9be2be5506ed4442add30be4e24b547, type: 3}
+  - {fileID: 21300000, guid: d7dac206bb0cd42989f97a102b026e75, type: 3}
+  - {fileID: 21300000, guid: b2353e16a769d4b44ae16df7393cd087, type: 3}
+  - {fileID: 21300000, guid: 4c48dc36d2155457fb5370c085b9583f, type: 3}
+  - {fileID: 21300000, guid: 4388bd563313043e4b5cfddf8613614d, type: 3}
+  - {fileID: 21300000, guid: 5021b3764fd954e6fa71fb9c5d135adf, type: 3}
+  - {fileID: 21300000, guid: 1f2b962acd7b44b7e8cad4878c18a558, type: 3}
+  - {fileID: 21300000, guid: 4e2b69ea94c204a988adf6bb36fb843e, type: 3}
+  - {fileID: 21300000, guid: 55b123fb5ce304e20af1ccd4f5012745, type: 3}
+  - {fileID: 21300000, guid: 8750a03d0cee04cb7bd86b53b3e08ac2, type: 3}
+  - {fileID: 21300000, guid: 1d037a4df63b94ac5afa2ba5f49b945c, type: 3}
+  - {fileID: 21300000, guid: 7d1c5b9e1880e41ed88e478a7098e440, type: 3}
+  - {fileID: 21300000, guid: a6265bcffb3cd44d6834a3092299c946, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Language_Large_Fra
+  - Language_Small_Jpn
+  - Language_Small_Deu
+  - Language_Small_Tur
+  - Language_Large_Jpn
+  - Language_Large_Deu
+  - Language_Small_Kor
+  - Language_Large_Twn
+  - Language_Small_Esp
+  - Language_Large_Tur
+  - Language_Large_Chn
+  - Language_Large_Eng
+  - Language_Small_Ind
+  - Language_Small_Twn
+  - Language_Small_Chn
+  - Language_Large_Prt
+  - Language_Small_Rus
+  - Language_Small_Prt
+  - Language_Large_Esp
+  - Language_Small_Fra
+  - Language_Large_Kor
+  - Language_Large_Ind
+  - Language_Large_Rus
+  - Language_Small_Eng
+  m_RenderDataMap: {}
+  m_Tag: CountryAtlas
+  m_IsVariant: 0

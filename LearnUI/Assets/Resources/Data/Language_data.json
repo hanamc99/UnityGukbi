@@ -1,0 +1,13 @@
+[
+{"id":0,"country":"usa","language":10,"spriteName":"Language_Large_Eng"},
+{"id":1,"country":"germ","language":8,"spriteName":"Language_Large_Deu"},
+{"id":2,"country":"frac","language":14,"spriteName":"Language_Large_Fra"},
+{"id":3,"country":"spa","language":34,"spriteName":"Language_Large_Esp"},
+{"id":4,"country":"kor","language":23,"spriteName":"Language_Large_Kor"},
+{"id":5,"country":"chi","language":6,"spriteName":"Language_Large_Chn"},
+{"id":6,"country":"tai","language":36,"spriteName":"Language_Large_Twn"},
+{"id":7,"country":"jpn","language":22,"spriteName":"Language_Large_Jpn"},
+{"id":8,"country":"prtg","language":28,"spriteName":"Language_Large_Prt"},
+{"id":9,"country":"rus","language":31,"spriteName":"Language_Large_Rus"},
+{"id":10,"country":"indo","language":20,"spriteName":"Language_Large_Ind"},
+{"id":11,"country":"turk","language":37,"spriteName":"Language_Large_Tur"}]

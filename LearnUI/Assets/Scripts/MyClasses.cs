@@ -109,6 +109,24 @@ public class AchievementInfo
     }
 }
 
+public class SettingsInfo
+{
+    public int difficulty;
+    public float bgm;
+    public float sfx;
+    public int notice;
+    public int savePower;
+    public int languageId;
+}
+
+public class LanguageData
+{
+    public int id;
+    public string country;
+    public int language;
+    public string spriteName;
+}
+
 public class StageData
 {
     public int id;
