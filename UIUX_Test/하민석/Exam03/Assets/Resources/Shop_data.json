@@ -1,0 +1,6 @@
+[
+{"id":"1000","reward":"240 Gold","price":"US $1.99","name":"Tiny of Gold","spriteName":"set_icon_gold_0"},
+{"id":"1001","reward":"650 Gold","price":"US $4.99","name":"Fistful of Gold","spriteName":"set_icon_gold_1"},
+{"id":"1002","reward":"1,500 Gold","price":"US $9.99","name":"Pouch of Gold","spriteName":"set_icon_gold_2"},
+{"id":"1003","reward":"3,000 Gold","price":"US $24.99","name":"Box of Gold","spriteName":"set_icon_gold_3"},
+{"id":"1004","reward":"8,000 Gold","price":"US $59.99","name":"Chest of Gold","spriteName":"set_icon_gold_4"}]
