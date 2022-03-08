@@ -144,3 +144,28 @@ Received Import Request.
 Start importing Assets/Toon/ToonSelf.shader using Guid(c38b1d2da79d38e438801e7f63fd8f47) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2c0df83a9d4dea0262e11c5ec9477c12') in 0.008028 seconds 
   Import took 0.010542 seconds .
 
+========================================================================
+Received Import Request.
+  Time since last request: 4177.399344 seconds.
+  path: Assets/RimAndHolo/RimAndHolo.unity
+  artifactKey: Guid(486b98cf316b07241ba61d5eb3725972) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RimAndHolo/RimAndHolo.unity using Guid(486b98cf316b07241ba61d5eb3725972) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ce652d5563c3f97042fccd3d0681da05') in 0.021151 seconds 
+  Import took 0.071645 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1715.571029 seconds.
+  path: Assets/Scenes/Test.unity
+  artifactKey: Guid(2e31d3bd10822164eb5e84d3dfe9197c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Test.unity using Guid(2e31d3bd10822164eb5e84d3dfe9197c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e55e2ac51d2cad3da77162b2397a0518') in 0.019903 seconds 
+  Import took 0.026121 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.137030 seconds.
+  path: Assets/Scenes/rock.unity
+  artifactKey: Guid(ef3931b53fe845f4385f3da7700af3e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/rock.unity using Guid(ef3931b53fe845f4385f3da7700af3e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '80aa62e65c42abe2a5e14cfb4e18ffff') in 0.015300 seconds 
+  Import took 0.019961 seconds .
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
