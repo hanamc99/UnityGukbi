@@ -1,0 +1,65 @@
+{
+    "Penguin": {
+        "checkpoints": [
+            {
+                "steps": 1000113,
+                "file_path": "results\\FirstPenguinRun\\Penguin\\Penguin-1000113.onnx",
+                "reward": 4.784600648615095,
+                "creation_time": 1647394687.5449963,
+                "auxillary_file_paths": [
+                    "results\\FirstPenguinRun\\Penguin\\Penguin-1000113.pt"
+                ]
+            },
+            {
+                "steps": 1000113,
+                "file_path": "results\\FirstPenguinRun\\Penguin\\Penguin-1000113.onnx",
+                "reward": null,
+                "creation_time": 1647395058.3540015,
+                "auxillary_file_paths": [
+                    "results\\FirstPenguinRun\\Penguin\\Penguin-1000113.pt"
+                ]
+            },
+            {
+                "steps": 1206891,
+                "file_path": "results\\FirstPenguinRun\\Penguin\\Penguin-1206891.onnx",
+                "reward": 4.963783611853917,
+                "creation_time": 1647395466.0076768,
+                "auxillary_file_paths": [
+                    "results\\FirstPenguinRun\\Penguin\\Penguin-1206891.pt"
+                ]
+            },
+            {
+                "steps": 1211692,
+                "file_path": "results\\FirstPenguinRun\\Penguin\\Penguin-1211692.onnx",
+                "reward": 4.971133629480998,
+                "creation_time": 1647409139.1301095,
+                "auxillary_file_paths": [
+                    "results\\FirstPenguinRun\\Penguin\\Penguin-1211692.pt"
+                ]
+            },
+            {
+                "steps": 1245458,
+                "file_path": "results\\FirstPenguinRun\\Penguin\\Penguin-1245458.onnx",
+                "reward": 4.931650221347809,
+                "creation_time": 1647409797.4767785,
+                "auxillary_file_paths": [
+                    "results\\FirstPenguinRun\\Penguin\\Penguin-1245458.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 1245458,
+            "file_path": "results\\FirstPenguinRun\\Penguin.onnx",
+            "reward": 4.931650221347809,
+            "creation_time": 1647409797.4767785,
+            "auxillary_file_paths": [
+                "results\\FirstPenguinRun\\Penguin\\Penguin-1245458.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.28.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}

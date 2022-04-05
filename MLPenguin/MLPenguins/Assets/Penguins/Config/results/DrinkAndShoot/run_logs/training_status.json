@@ -1,0 +1,65 @@
+{
+    "Penguin": {
+        "checkpoints": [
+            {
+                "steps": 26655,
+                "file_path": "results\\DrinkAndShoot\\Penguin\\Penguin-26655.onnx",
+                "reward": 4.561778596469334,
+                "creation_time": 1647848656.3065765,
+                "auxillary_file_paths": [
+                    "results\\DrinkAndShoot\\Penguin\\Penguin-26655.pt"
+                ]
+            },
+            {
+                "steps": 499891,
+                "file_path": "results\\DrinkAndShoot\\Penguin\\Penguin-499891.onnx",
+                "reward": 7.444212928414345,
+                "creation_time": 1647849440.6750927,
+                "auxillary_file_paths": [
+                    "results\\DrinkAndShoot\\Penguin\\Penguin-499891.pt"
+                ]
+            },
+            {
+                "steps": 999985,
+                "file_path": "results\\DrinkAndShoot\\Penguin\\Penguin-999985.onnx",
+                "reward": 7.964483638604482,
+                "creation_time": 1647849992.8544028,
+                "auxillary_file_paths": [
+                    "results\\DrinkAndShoot\\Penguin\\Penguin-999985.pt"
+                ]
+            },
+            {
+                "steps": 1499950,
+                "file_path": "results\\DrinkAndShoot\\Penguin\\Penguin-1499950.onnx",
+                "reward": 7.73703533411026,
+                "creation_time": 1647850549.6579187,
+                "auxillary_file_paths": [
+                    "results\\DrinkAndShoot\\Penguin\\Penguin-1499950.pt"
+                ]
+            },
+            {
+                "steps": 1548608,
+                "file_path": "results\\DrinkAndShoot\\Penguin\\Penguin-1548608.onnx",
+                "reward": 7.753417841025761,
+                "creation_time": 1647850603.6841953,
+                "auxillary_file_paths": [
+                    "results\\DrinkAndShoot\\Penguin\\Penguin-1548608.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 1548608,
+            "file_path": "results\\DrinkAndShoot\\Penguin.onnx",
+            "reward": 7.753417841025761,
+            "creation_time": 1647850603.6841953,
+            "auxillary_file_paths": [
+                "results\\DrinkAndShoot\\Penguin\\Penguin-1548608.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.28.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}

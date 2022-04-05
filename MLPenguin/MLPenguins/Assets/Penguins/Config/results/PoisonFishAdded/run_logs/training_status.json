@@ -1,0 +1,65 @@
+{
+    "Penguin": {
+        "checkpoints": [
+            {
+                "steps": 999932,
+                "file_path": "results\\PoisonFishAdded\\Penguin\\Penguin-999932.onnx",
+                "reward": null,
+                "creation_time": 1647757500.5598245,
+                "auxillary_file_paths": [
+                    "results\\PoisonFishAdded\\Penguin\\Penguin-999932.pt"
+                ]
+            },
+            {
+                "steps": 1499931,
+                "file_path": "results\\PoisonFishAdded\\Penguin\\Penguin-1499931.onnx",
+                "reward": 4.968750339287978,
+                "creation_time": 1647758033.364045,
+                "auxillary_file_paths": [
+                    "results\\PoisonFishAdded\\Penguin\\Penguin-1499931.pt"
+                ]
+            },
+            {
+                "steps": 1999959,
+                "file_path": "results\\PoisonFishAdded\\Penguin\\Penguin-1999959.onnx",
+                "reward": 4.9723749458789825,
+                "creation_time": 1647758605.2420712,
+                "auxillary_file_paths": [
+                    "results\\PoisonFishAdded\\Penguin\\Penguin-1999959.pt"
+                ]
+            },
+            {
+                "steps": 2499966,
+                "file_path": "results\\PoisonFishAdded\\Penguin\\Penguin-2499966.onnx",
+                "reward": 4.8864439986646175,
+                "creation_time": 1647759163.5949123,
+                "auxillary_file_paths": [
+                    "results\\PoisonFishAdded\\Penguin\\Penguin-2499966.pt"
+                ]
+            },
+            {
+                "steps": 2756859,
+                "file_path": "results\\PoisonFishAdded\\Penguin\\Penguin-2756859.onnx",
+                "reward": null,
+                "creation_time": 1647759469.5859418,
+                "auxillary_file_paths": [
+                    "results\\PoisonFishAdded\\Penguin\\Penguin-2756859.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 2756859,
+            "file_path": "results\\PoisonFishAdded\\Penguin.onnx",
+            "reward": null,
+            "creation_time": 1647759469.5859418,
+            "auxillary_file_paths": [
+                "results\\PoisonFishAdded\\Penguin\\Penguin-2756859.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.28.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}

@@ -1,0 +1,47 @@
+{
+    "3DBall": {
+        "checkpoints": [
+            {
+                "steps": 151223,
+                "file_path": "results\\first3DBallRun2\\3DBall\\3DBall-151223.onnx",
+                "reward": 100.00001525878906,
+                "creation_time": 1646878137.738636,
+                "auxillary_file_paths": [
+                    "results\\first3DBallRun2\\3DBall\\3DBall-151223.pt"
+                ]
+            },
+            {
+                "steps": 235186,
+                "file_path": "results\\first3DBallRun2\\3DBall\\3DBall-235186.onnx",
+                "reward": null,
+                "creation_time": 1646878605.9088643,
+                "auxillary_file_paths": [
+                    "results\\first3DBallRun2\\3DBall\\3DBall-235186.pt"
+                ]
+            },
+            {
+                "steps": 258557,
+                "file_path": "results\\first3DBallRun2\\3DBall\\3DBall-258557.onnx",
+                "reward": 100.00001525878906,
+                "creation_time": 1646878782.9670005,
+                "auxillary_file_paths": [
+                    "results\\first3DBallRun2\\3DBall\\3DBall-258557.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 258557,
+            "file_path": "results\\first3DBallRun2\\3DBall.onnx",
+            "reward": 100.00001525878906,
+            "creation_time": 1646878782.9670005,
+            "auxillary_file_paths": [
+                "results\\first3DBallRun2\\3DBall\\3DBall-258557.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.28.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}
